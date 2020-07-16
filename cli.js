@@ -55,7 +55,7 @@ program
       options.regexFilter = '.*'
     }
     const reader = new index.KinesisStreamReader(client, streamName, options)
-    if (program.verbose) reader.on("connected", () => process.stdout.write(`Connected to stream: ${streamName}\n`))  
+    if (program.verbose) reader.on("connected", () => process.stderr.write(`Connected to stream: ${streamName}\n`))  
     reader.pipe(process.stdout)
   })
   .parse(process.argv)
